@@ -1,0 +1,154 @@
+/* Estilos generales */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+img {
+    margin-bottom: 20px;
+}
+
+/* Formularios */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    font-weight: bold;
+    color: #555;
+}
+
+form input[type="email"],
+form input[type="password"],
+form input[type="text"] {
+    width: calc(100% - 20px); /* Ajusta para padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Incluye padding en el width */
+}
+
+/* Botones */
+button {
+    background-color: #1E3260; /* Azul Novillo */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #152447;
+}
+
+#logout-button {
+    background-color: #d9534f; /* Rojo */
+    float: right;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+#logout-button:hover {
+    background-color: #c9302c;
+}
+
+#scan-button {
+    font-size: 18px;
+    padding: 15px 30px;
+}
+
+#redeem-button {
+    background-color: #5cb85c; /* Verde */
+    width: 100%;
+}
+#redeem-button:hover {
+    background-color: #4cae4c;
+}
+
+/* Mensajes */
+.error-message {
+    color: #d9534f; /* Rojo */
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.status-message {
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+.status-valid { background-color: #dff0d8; color: #3c763d; } /* Verde claro */
+.status-invalid { background-color: #f2dede; color: #a94442; } /* Rojo claro */
+.status-info { background-color: #d9edf7; color: #31708f; } /* Azul claro */
+
+/* Header del escáner */
+header {
+    text-align: left;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    overflow: hidden; /* Clear floats */
+}
+header p {
+    margin: 5px 0;
+    color: #555;
+}
+header p span {
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* Resultado */
+#result-section p {
+    text-align: left;
+    margin: 8px 0;
+    color: #333;
+}
+#result-section p strong {
+    color: #1E3260; /* Azul Novillo */
+    margin-right: 5px;
+}
+
+/* QR Reader Styling */
+#qr-reader {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#qr-reader span a { /* Ocultar enlace de "scan code" si aparece */
+    display: none !important;
+}
+#qr-reader__dashboard_section_csr button { /* Estilo botones de permisos */
+     background-color: #f0ad4e; /* Amarillo */
+     color: #fff;
+}
+#qr-reader__dashboard_section_csr button:hover {
+     background-color: #ec971f;
+}
