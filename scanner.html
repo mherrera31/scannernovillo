@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escáner de Cupones - Novillo Alegre</title>
+    <link rel="stylesheet" href="style.css"> <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script> <script src="app.js" defer></script> </head>
+<body>
+
+    <div id="login-section" class="container">
+        <h1>Iniciar Sesión - Escáner</h1>
+        <img src="logo.png" alt="Logo Novillo Alegre" width="150"> <form id="login-form">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Ingresar</button>
+            <p id="login-error" class="error-message"></p>
+        </form>
+    </div>
+
+    <div id="scanner-section" class="container" style="display: none;">
+        <header>
+            <p>Usuario: <span id="user-display"></span></p>
+            <p>Sucursal: <span id="branch-display"></span></p>
+            <button id="logout-button">Cerrar Sesión</button>
+        </header>
+
+        <hr>
+
+        <button id="scan-button">📷 Scannear Cupón</button>
+
+        <div id="qr-reader" style="width: 100%; max-width: 500px; margin-top: 20px;"></div>
+        <p id="scan-status"></p>
+
+        <div id="result-section" style="display: none; margin-top: 20px; border: 1px solid #ccc; padding: 15px;">
+            <h2>Detalles del Cupón</h2>
+            <p><strong>Consecutivo:</strong> <span id="result-consecutive"></span></p>
+            <p><strong>Valor (CRC):</strong> <span id="result-value-crc"></span></p>
+            <p><strong>Valor (USD):</strong> <span id="result-value-usd"></span></p>
+            <p><strong>Validez:</strong> <span id="result-validity"></span></p>
+            <p><strong>Restricciones:</strong> <span id="result-restrictions"></span></p>
+            <p><strong>Expira:</strong> <span id="result-expiration"></span></p>
+            <hr>
+            <p id="result-status" class="status-message"></p>
+
+            <div id="invoice-input-area" style="margin-top: 10px; display: none;">
+                 <label for="invoice-number">Número de Factura (Opcional):</label>
+                 <input type="text" id="invoice-number" name="invoice-number">
+            </div>
+
+            <button id="redeem-button" style="display: none; margin-top: 15px; background-color: green; color: white;">✅ Aceptar Canje</button>
+        </div>
+    </div>
+
+</body>
+</html>
