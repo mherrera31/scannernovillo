@@ -210,7 +210,7 @@ function startScanner() {
         stopScanner(); // Detener escaneo tras éxito
         fetchCouponData(decodedText);
     };
-    const config = { fps: 10, qrbox: { width: 250, height: 250 } };
+    const config = { fps: 20 };
 
     // Iniciar escaneo usando la cámara trasera preferentemente
     html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback)
