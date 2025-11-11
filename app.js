@@ -316,6 +316,7 @@ async function fetchCouponData(couponId) {
         if (canRedeem) {
             showElement(redeemButton);
             showElement(invoiceInputArea); // Mostrar campo de factura
+            invoiceNumberInput.value = ""; // Limpiar campo de factura anterior
         } else {
             hideElement(redeemButton);
             hideElement(invoiceInputArea); // Ocultar campo de factura
@@ -339,7 +340,18 @@ async function handleRedeem() {
     const couponId = scannedCouponData.id;
     const redemptionBranchId = userProfile.branch?.id;
     const redeemedByUserId = currentUser.id;
-    const invoiceNumber = invoiceNumberInput.value.trim() || null; // Tomar valor o null si está vacío
+    
+    // --- INICIO CAMBIO: VALIDACIÓN OBLIGATORIA ---
+    const invoiceNumber = invoiceNumberInput.value.trim(); // Quitar '|| null'
+
+    // Validar que la factura no esté vacía
+    if (!invoiceNumber) {
+        setStatusMessage(resultStatus, "Error: El número de factura es obligatorio para canjear.", "invalid");
+        // Asegurarse que el botón de canje siga visible para reintentar
+        showElement(redeemButton);
+        return; // Detener la función
+    }
+    // --- FIN CAMBIO ---
 
     if (!redemptionBranchId) {
          setStatusMessage(resultStatus, "Error: El usuario no tiene una sucursal asignada.", "invalid");
@@ -355,7 +367,7 @@ async function handleRedeem() {
         redemption_date: new Date().toISOString(),
         redemption_branch_id: redemptionBranchId,
         redeemed_by_user_id: redeemedByUserId,
-        invoice_number: invoiceNumber
+        invoice_number: invoiceNumber // Ahora siempre enviará el valor
     };
 
     try {
