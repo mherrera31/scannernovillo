@@ -49,6 +49,15 @@ form input[type="text"] {
     box-sizing: border-box; /* Incluye padding en el width */
 }
 
+/* INICIO CAMBIO: Estilo para inputs inválidos (como factura vacía) */
+form input:invalid,
+input:invalid {
+    border-color: #a94442; /* Rojo */
+    box-shadow: 0 0 5px rgba(169, 68, 66, 0.5);
+}
+/* FIN CAMBIO */
+
+
 /* Botones */
 button {
     background-color: #1E3260; /* Azul Novillo */
@@ -151,4 +160,22 @@ header p span {
 }
 #qr-reader__dashboard_section_csr button:hover {
      background-color: #ec971f;
+}
+
+/* CAMBIO: Estilos para el input de factura dentro de la sección de resultados */
+#invoice-input-area label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    font-weight: bold;
+    color: #555;
+}
+
+#invoice-input-area input[type="text"] {
+    width: calc(100% - 20px); /* Ajusta para padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Incluye padding en el width */
 }
