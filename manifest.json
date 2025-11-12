@@ -1,0 +1,21 @@
+{
+  "name": "Escáner Novillo",
+  "short_name": "Escáner",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#1E3260",
+  "description": "Escáner de cupones para Novillo Alegre.",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
