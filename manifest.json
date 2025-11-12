@@ -1,6 +1,6 @@
 {
   "name": "Escáner Novillo",
-  "short_name": "Escáner",
+  "short_name": "ScannerCupon",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#FFFFFF",
